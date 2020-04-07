@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/back"
-        android:icon="@drawable/abc_vector_test"
-        android:title="Back" />
-
-    <item
         android:id="@+id/dashboard"
         android:icon="@android:drawable/ic_dialog_dialer"
         android:title="Dashboard" />
@@ -18,6 +13,6 @@
     <item
         android:id="@+id/settings"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Leaderboard" />
+        android:title="settings" />
 
 </menu>
