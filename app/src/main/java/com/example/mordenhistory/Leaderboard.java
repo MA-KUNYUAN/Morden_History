@@ -16,23 +16,21 @@ public class Leaderboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
+
+
+        //setting up bottom navigation view
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        //connecting bottom navigation view with menu
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
 
+        //setting up the actions of the OnClickListener when each Icon is pressed
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-
-                    /*
-                    case R.id.back:
-
-                        break;
-
-                     */
 
                     case R.id.dashboard:
                         Intent intent1 = new Intent(Leaderboard.this, MainActivity.class);
@@ -55,5 +53,11 @@ public class Leaderboard extends AppCompatActivity {
                 return false;
             }
         });
+
+   /*
+mitchtabian, AppBarLayouts(2017)
+https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Navigation
+  */
     }
-}
+    }
+

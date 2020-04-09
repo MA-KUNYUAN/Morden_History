@@ -33,3 +33,7 @@ class BottomNavigationViewHelper {
         }
     }
 }
+ /*
+mitchtabian, AppBarLayouts(2017)
+https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Navigation
+  */

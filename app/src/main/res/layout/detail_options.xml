@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="80dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/readings"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="42dp"
+        android:text="readings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz" />
+
+    <Button
+        android:id="@+id/youtube"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="61dp"
+        android:text="You Tube Videos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1" />
+
+    <Button
+        android:id="@+id/quiz"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="42dp"
+        android:text="Quiz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtube" />
+</androidx.constraintlayout.widget.ConstraintLayout>
