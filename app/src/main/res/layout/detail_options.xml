@@ -36,6 +36,7 @@
         android:layout_marginStart="103dp"
         android:layout_marginLeft="103dp"
         android:layout_marginTop="61dp"
+        android:onClick="YouTubeVideo"
         android:text="You Tube Videos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title1" />

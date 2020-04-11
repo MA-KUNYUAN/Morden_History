@@ -25,7 +25,7 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.YouTubeV
         @Override
         public void onClick(View v) {
             YouTubeVideo youTube = (YouTubeVideo) v.getTag();
-            Topics topic=(Topics) v.getTag();
+           // Topics topic=(Topics) v.getTag();
             //if device has a wide screen initialise fragment in the detail container
             //else switch to new activity
             if(mTwoPane) {
@@ -55,7 +55,7 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.YouTubeV
 
         public YouTubeViewHolder(View v) {
             super(v);
-            name = v.findViewById(R.id.yName);
+            name = v.findViewById(R.id.topicName);
         }
     }
 

@@ -42,7 +42,7 @@ public class YouTubeVid extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_you_tube_vid, container, false);
 
-        if(topic != null) {
+
 
             ((TextView) rootView.findViewById(R.id.youTubeTitle)).setText(video.getName());
 
@@ -62,7 +62,7 @@ public class YouTubeVid extends Fragment {
 
              */
 
-        }
+
 
         return rootView;
     }

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements TopicAdapter.OnClickListener {
 
     ArrayList<Topics> topic;
-
+    BottomNavigationView bottomNavigationView;
 
 
     @Override
@@ -28,13 +29,19 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
 
 
         //setting up bottom navigation view
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        if(bottomNavigationView == null){
+            System.out.println("Reference is null");
+        }
+        //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         //connecting bottom navigataion view with menu
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
+
+/*
         //setting up the actions of the OnClickListener when each Icon is pressed
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -48,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
                     case R.id.leaderboard:
                         Intent intent2 = new Intent(MainActivity.this, Leaderboard.class);
                         startActivity(intent2);
-                        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-                        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+                        //BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+                        //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
                         break;
 
                     case R.id.settings:
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
                 return false;
             }
         });
-
+*/
          /*
 mitchtabian, AppBarLayouts(2017)
 https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Navigation
@@ -74,8 +81,34 @@ https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Na
         launchApp();
     }
 
+    BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.dashboard:
 
-    //setting up the recyclerview
+                            return true;
+
+                        case R.id.leaderboard:
+                            Intent intent2 = new Intent(MainActivity.this, Leaderboard.class);
+                            startActivity(intent2);
+                            //BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+                            //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+                            return true;
+
+                        case R.id.settings:
+                            Intent intent3 = new Intent(MainActivity.this, Settings.class);
+                            startActivity(intent3);
+                            return true;
+
+                    }
+                    return false;
+                }
+            };
+
+
+                //setting up the recyclerview
     private void launchApp() {
 
         RecyclerView rvTopic = (RecyclerView) findViewById(R.id.rvTopic);
