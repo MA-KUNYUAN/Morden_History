@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">Morden History</string>
-    <string name="dashboardbutton">Dashboard</string>
-    <string name="leaderboardbutton">Leader Board</string>
-    <string name="settingbutton">Settings</string>
-    <string name="title">Title</string>
 </resources>
