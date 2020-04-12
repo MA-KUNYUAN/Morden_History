@@ -1,9 +1,12 @@
 package com.example.mordenhistory;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class YouTubeVideo {
+public class YouTubeVideo implements Parcelable {
     public String URL;
     public String name;
 
@@ -15,6 +18,23 @@ public class YouTubeVideo {
         this.URL = URL;
         this.name = name;
     }
+
+    protected YouTubeVideo(Parcel in) {
+        URL = in.readString();
+        name = in.readString();
+    }
+
+    public static final Creator<YouTubeVideo> CREATOR = new Creator<YouTubeVideo>() {
+        @Override
+        public YouTubeVideo createFromParcel(Parcel in) {
+            return new YouTubeVideo(in);
+        }
+
+        @Override
+        public YouTubeVideo[] newArray(int size) {
+            return new YouTubeVideo[size];
+        }
+    };
 
     public String getURL() {
         return URL;
@@ -83,5 +103,16 @@ public class YouTubeVideo {
             }
         }
         return null;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(URL);
+        dest.writeString(name);
     }
 }

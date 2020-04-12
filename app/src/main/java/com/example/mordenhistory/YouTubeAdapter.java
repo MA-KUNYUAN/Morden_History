@@ -12,90 +12,89 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.YouTubeViewHolder> {
-    @NonNull
+public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHolder> {
+
+    private final OnClickListener onCklickListner;
 
 
-    private YouTubeList mParentActivity;
-    private ArrayList<YouTubeVideo> mVid;
-    private boolean mTwoPane;
+    //private final OnClickListener OnCklickListner;
 
-    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+    //setting up the OnClickListener Interface that will be implemented by the main activity as wel as the recyclerView
+    public interface OnClickListener {
+        void OnClick(int position);
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        public TextView videoName;
+        //public TextView peroid;
+        OnClickListener onClickListener;
+
+
+
+        public ViewHolder(View itemView, OnClickListener onClickListener) {
+
+            super(itemView);
+
+            videoName = (TextView) itemView.findViewById(R.id.youTubeName);
+            //peroid=(TextView) itemView.findViewById(R.id.peroid);
+            this.onClickListener = onClickListener;
+            itemView.setOnClickListener(this);
+
+        }
+
+
+        // OnClick method which will help determine which item was selected by the used
         @Override
         public void onClick(View v) {
-            YouTubeVideo youTube = (YouTubeVideo) v.getTag();
-           // Topics topic=(Topics) v.getTag();
-            //if device has a wide screen initialise fragment in the detail container
-            //else switch to new activity
-            if(mTwoPane) {
-                Bundle arguments = new Bundle();
-                arguments.putString(YouTubeVid.ARG_ITEM_ID, youTube.getName());
-                YouTubeVid fragment = new YouTubeVid();
-                fragment.setArguments(arguments);
-
-                mParentActivity.getSupportFragmentManager().beginTransaction().replace(R.id.detailContainer, fragment).commit();
-            } else {
-                Context context = v.getContext();
-                Intent intent = new Intent(context, DetailYoutube.class);
-                intent.putExtra(YouTubeVid.ARG_ITEM_ID, youTube.getName());
-                context.startActivity(intent);
-            }
-        }
-    };
-
-    public YouTubeAdapter(YouTubeList parent, ArrayList<YouTubeVideo> vid1, boolean twoPane) {
-        mParentActivity = parent;
-        mVid = vid1;
-        mTwoPane = twoPane;
-    }
-
-    public static class YouTubeViewHolder extends RecyclerView.ViewHolder  {
-        public TextView name;
-
-        public YouTubeViewHolder(View v) {
-            super(v);
-            name = v.findViewById(R.id.topicName);
+            onClickListener.OnClick(getAdapterPosition());
         }
     }
 
-    @Override
-    public YouTubeAdapter.YouTubeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //inflating itemr XML in recyclerview
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.you_tube_item, parent, false);
-        return new YouTubeViewHolder(v);
+    private List<YouTubeVideo> mVid;
+
+    public YouTubeAdapter(List<YouTubeVideo> coins, OnClickListener mOnClickListner) {
+        mVid = coins;
+        this.onCklickListner = mOnClickListner;
+
     }
 
     @Override
-    public void onBindViewHolder(YouTubeViewHolder holder, int position) {
-        //populating textView with restaurant data by calling get methods.
-        // and initialising the onClickListner
-        YouTubeVideo video1 = mVid.get(position);
-        holder.name.setText(video1.getName());
-        holder.itemView.setTag(video1);
-        holder.itemView.setOnClickListener(mOnClickListener);
+    public YouTubeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        // Inflate the custom layout
+        View coinView = inflater.inflate(R.layout.you_tube_item, parent, false);
+
+        // Return a new holder instance
+        ViewHolder viewHolder = new ViewHolder(coinView, onCklickListner);
+        return viewHolder;
     }
+
+    @Override
+    public void onBindViewHolder(YouTubeAdapter.ViewHolder viewHolder, int position) {
+        // Get the data model based on position
+        YouTubeVideo topic = mVid.get(position);
+
+        // Set item views based on your views and data model
+        TextView textView;
+        textView = viewHolder.videoName;
+        textView.setText(topic.getName());
+
+
+    }
+
 
     @Override
     public int getItemCount() {
         return mVid.size();
     }
 
-    /*
 
-    public YouTubeAdapter.YouTubeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull YouTubeAdapter.YouTubeViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-     */
 }
+
+
