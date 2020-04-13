@@ -1,20 +1,16 @@
 package com.example.mordenhistory;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHolder> {
+public class PdfAdapter extends RecyclerView.Adapter<PdfAdapter.ViewHolder> {
 
     private final OnClickListener onCklickListner;
 
@@ -29,7 +25,7 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView videoName;
+        public TextView pdfName1;
         //public TextView peroid;
         OnClickListener onClickListener;
 
@@ -39,7 +35,7 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
 
             super(itemView);
 
-            videoName = (TextView) itemView.findViewById(R.id.youTubeName);
+            pdfName1 = (TextView) itemView.findViewById(R.id.pdfName);
             //peroid=(TextView) itemView.findViewById(R.id.peroid);
             this.onClickListener = onClickListener;
             itemView.setOnClickListener(this);
@@ -54,21 +50,21 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
         }
     }
 
-    private List<YouTubeVideo> mVid;
+    private List<Pdf> mPdf;
 
-    public YouTubeAdapter(List<YouTubeVideo> coins, OnClickListener mOnClickListner) {
-        mVid = coins;
+    public PdfAdapter(List<Pdf> coins, OnClickListener mOnClickListner) {
+        mPdf = coins;
         this.onCklickListner = mOnClickListner;
 
     }
 
     @Override
-    public YouTubeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PdfAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View coinView = inflater.inflate(R.layout.you_tube_item, parent, false);
+        View coinView = inflater.inflate(R.layout.pdf_item, parent, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(coinView, onCklickListner);
@@ -76,14 +72,14 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(YouTubeAdapter.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(PdfAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        YouTubeVideo topic = mVid.get(position);
+        Pdf topic = mPdf.get(position);
 
         // Set item views based on your views and data model
         TextView textView;
-        textView = viewHolder.videoName;
-        textView.setText(topic.getName());
+        textView = viewHolder.pdfName1;
+        textView.setText(topic.getNamePDF());
 
 
     }
@@ -91,10 +87,8 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return mVid.size();
+        return mPdf.size();
     }
 
 
 }
-
-

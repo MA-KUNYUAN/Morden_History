@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mordenhistory">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".PdfView"></activity>
+        <activity android:name=".PdfList" />
+        <activity android:name=".DetailYoutube" />
+        <activity android:name=".YouTubeList" />
         <activity android:name=".Leaderboard" />
+        <activity android:name=".Settings" />
         <activity android:name=".dashboard" />
+        <activity android:name=".Detail_Option" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

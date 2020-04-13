@@ -32,7 +32,17 @@ public class Detail_Option extends AppCompatActivity {
         TextView title2=(TextView)findViewById(R.id.title1);
         String title= (String) title2.getText();
         intent.putExtra("topic_title", title );
-                startActivity(intent);
+        startActivity(intent);
+
+    }
+
+
+    public void PdfView(View view){
+        Intent intent=new Intent(Detail_Option.this, PdfList.class );
+        TextView title2=(TextView)findViewById(R.id.title1);
+        String title= (String) title2.getText();
+        intent.putExtra("topic_title1", title );
+        startActivity(intent);
 
     }
 

@@ -1,9 +1,12 @@
 package com.example.mordenhistory;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.Vector;
 
-public class YouTubeVideo {
+public class YouTubeVideo implements Parcelable {
     public String URL;
     public String name;
 
@@ -15,6 +18,23 @@ public class YouTubeVideo {
         this.URL = URL;
         this.name = name;
     }
+
+    protected YouTubeVideo(Parcel in) {
+        URL = in.readString();
+        name = in.readString();
+    }
+
+    public static final Creator<YouTubeVideo> CREATOR = new Creator<YouTubeVideo>() {
+        @Override
+        public YouTubeVideo createFromParcel(Parcel in) {
+            return new YouTubeVideo(in);
+        }
+
+        @Override
+        public YouTubeVideo[] newArray(int size) {
+            return new YouTubeVideo[size];
+        }
+    };
 
     public String getURL() {
         return URL;
@@ -37,15 +57,16 @@ public class YouTubeVideo {
         ArrayList<Topics> topic2=new ArrayList<>();
         ArrayList<YouTubeVideo> vid3=new ArrayList<>();
         for(int i=0; i<topic.size(); i++){
-            if((topic.get(i).getName()).equals(title))
+            if((topic.get(i).getName()).equals(title)) {
                 topic2.add(topic.get(i));
+            }
         }
 
         for(int i=0; i<topic2.size() ; i++){
 
-            Topics topic1=topic.get(i);
+            Topics topic3=topic2.get(i);
 
-            ArrayList<YouTubeVideo> vid1=topic1.getYoutube();
+            ArrayList<YouTubeVideo> vid1=topic3.getYoutube();
 
             for(int k = 0; k<vid1.size(); k++){
 
@@ -83,5 +104,16 @@ public class YouTubeVideo {
             }
         }
         return null;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(URL);
+        dest.writeString(name);
     }
 }

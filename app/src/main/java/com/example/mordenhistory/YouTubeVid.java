@@ -3,20 +3,38 @@ package com.example.mordenhistory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
+import com.google.android.youtube.player.YouTubePlayerView;
 
-public class YouTubeVid extends Fragment {
+
+public class YouTubeVid extends YouTubePlayerFragment {
+
+    //Button button;
+    //private YouTubePlayerFragment youTubePlayerFragment;
+    //private YouTubePlayer.OnInitializedListener listener;
+
+
 
     public static final String ARG_ITEM_ID = "item_id";
     private Topics topic;
     private YouTubeVideo video;
+    private WebView webView;
 
 
 
@@ -34,6 +52,8 @@ public class YouTubeVid extends Fragment {
             video=YouTubeVideo.pick(getArguments().getString(ARG_ITEM_ID));
             this.getActivity().setTitle(video.getName());
         }
+
+
     }
 
     @Override
@@ -46,6 +66,13 @@ public class YouTubeVid extends Fragment {
 
             ((TextView) rootView.findViewById(R.id.youTubeTitle)).setText(video.getName());
 
+
+
+
+            //webView=(WebView) rootView.findViewById(R.id.videoWebView);
+       // webView.setWebViewClient(new WebViewClient());
+       // String url=video.getURL();
+       // webView.loadUrl(url);
 
             //finding the image in the drawable file
 
@@ -66,4 +93,6 @@ public class YouTubeVid extends Fragment {
 
         return rootView;
     }
+
+
 }

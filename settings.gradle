@@ -1,2 +1,3 @@
 rootProject.name='Morden History'
 include ':app'
+include ':libs'
