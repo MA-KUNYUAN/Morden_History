@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteY="48dp" />
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/playVid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Video"

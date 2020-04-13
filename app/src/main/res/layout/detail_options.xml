@@ -7,11 +7,12 @@
 
     <TextView
         android:id="@+id/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="126dp"
-        android:layout_marginLeft="126dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="342dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="53dp"
+        android:gravity="center"
         android:text="TextView"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -22,20 +23,21 @@
         android:id="@+id/readings"
         android:layout_width="182dp"
         android:layout_height="48dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginTop="32dp"
+        android:onClick="PdfView"
         android:text="readings"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz" />
+        app:layout_constraintTop_toBottomOf="@+id/youtube" />
 
     <Button
         android:id="@+id/youtube"
         android:layout_width="182dp"
         android:layout_height="48dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="61dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginTop="48dp"
         android:onClick="YouTubeVideo"
         android:text="You Tube Videos"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,10 +47,10 @@
         android:id="@+id/quiz"
         android:layout_width="182dp"
         android:layout_height="48dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginLeft="114dp"
+        android:layout_marginTop="34dp"
         android:text="Quiz"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube" />
+        app:layout_constraintTop_toBottomOf="@+id/readings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

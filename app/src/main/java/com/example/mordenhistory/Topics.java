@@ -105,25 +105,25 @@ public class Topics implements Parcelable {
      ArrayList<YouTubeVideo> youTubeIndustrialR=new ArrayList<>();
       ArrayList<YouTubeVideo> youTubeImperialism=new ArrayList<>();
 
-     youTubeEnlighment.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/NnoFj2cMRLY\" frameborder=\"0\" allowfullscreen></iframe>", "The Enlightenment:Crash Course European History #18"));
+     youTubeEnlighment.add(new YouTubeVideo("NnoFj2cMRLY", "The Enlightenment:Crash Course European History #18"));
 
-     youTubeEnlighment.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/S9AL0TUHuuM\" frameborder=\"0\" allowfullscreen></iframe>", "What wa the Enlightenment?"));
+     youTubeEnlighment.add(new YouTubeVideo("S9AL0TUHuuM", "What wa the Enlightenment?"));
 
-     youTubeAmericanR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/gzALIXcY4pg\" frameborder=\"0\" allowfullscreen></iframe>", "The American Revolution-OverSimplified"));
+     youTubeAmericanR.add(new YouTubeVideo("gzALIXcY4pg", "The American Revolution-OverSimplified"));
 
-     youTubeAmericanR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/HlUiSBXQHCw\" frameborder=\"0\" allowfullscreen></iframe>", "Tea Taxes, and The American Revolution: Crash Course World History #28" ));
+     youTubeAmericanR.add(new YouTubeVideo("HlUiSBXQHCw", "Tea Taxes, and The American Revolution: Crash Course World History #28" ));
 
-     youTubeFrenchR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/5fJl_ZX91l0\" frameborder=\"0\" allowfullscreen></iframe>", "The French Revolution: Crash Course European History #21 "));
+     youTubeFrenchR.add(new YouTubeVideo("5fJl_ZX91l0", "The French Revolution: Crash Course European History #21 "));
 
-     youTubeFrenchR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/XmWc5BIhZHY\" frameborder=\"0\" allowfullscreen></iframe>", "The French Revolution In a Nutshell"));
+     youTubeFrenchR.add(new YouTubeVideo("XmWc5BIhZHY", "The French Revolution In a Nutshell"));
 
-     youTubeIndustrialR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/zjK7PWmRRyg\" frameborder=\"0\" allowfullscreen></iframe>", "The Industrial Revolution:Crash European History #24"));
+     youTubeIndustrialR.add(new YouTubeVideo("zjK7PWmRRyg", "The Industrial Revolution:Crash European History #24"));
 
-     youTubeIndustrialR.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/xLhNP0qp38Q\" frameborder=\"0\" allowfullscreen></iframe>","The Industrial Revolution(18th-19th Century)"));
+     youTubeIndustrialR.add(new YouTubeVideo("xLhNP0qp38Q","The Industrial Revolution(18th-19th Century)"));
 
-     youTubeImperialism.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/alJaltUmrGo\" frameborder=\"0\" allowfullscreen></iframe>","Imperialism: Crash Course World History #35 "));
+     youTubeImperialism.add(new YouTubeVideo("alJaltUmrGo","Imperialism: Crash Course World History #35 "));
 
-     youTubeImperialism.add(new YouTubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/t_rHrGaoh4w\" frameborder=\"0\" allowfullscreen></iframe>", "European Imperialism for Dummies"));
+     youTubeImperialism.add(new YouTubeVideo("t_rHrGaoh4w", "European Imperialism for Dummies"));
 
      ArrayList<Pdf> enlightmentPdf=new ArrayList<>();
      ArrayList<Pdf> americanRPdf=new ArrayList<>();

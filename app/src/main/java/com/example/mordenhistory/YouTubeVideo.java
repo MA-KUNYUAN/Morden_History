@@ -57,15 +57,16 @@ public class YouTubeVideo implements Parcelable {
         ArrayList<Topics> topic2=new ArrayList<>();
         ArrayList<YouTubeVideo> vid3=new ArrayList<>();
         for(int i=0; i<topic.size(); i++){
-            if((topic.get(i).getName()).equals(title))
+            if((topic.get(i).getName()).equals(title)) {
                 topic2.add(topic.get(i));
+            }
         }
 
         for(int i=0; i<topic2.size() ; i++){
 
-            Topics topic1=topic.get(i);
+            Topics topic3=topic2.get(i);
 
-            ArrayList<YouTubeVideo> vid1=topic1.getYoutube();
+            ArrayList<YouTubeVideo> vid1=topic3.getYoutube();
 
             for(int k = 0; k<vid1.size(); k++){
 
