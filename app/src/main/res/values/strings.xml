@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Morden History</string>
+    <string name="score_rank">Rank</string>
+    <string name="user_name">User Name</string>
+    <string name="user_score">xxx points</string>
 </resources>
