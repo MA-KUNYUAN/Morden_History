@@ -61,6 +61,8 @@ public class YouTubeVid extends YouTubePlayerFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_you_tube_vid, container, false);
+//        ImageView background = rootView.findViewById(R.id.youtubeImaView);
+//        background.setImageResource(R.drawable.morden_history);
 
 
 

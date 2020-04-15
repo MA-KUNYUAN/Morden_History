@@ -6,16 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".YouTubeVid">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/youtubeImaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/morden_history" />
+    </FrameLayout>
+
     <TextView
         android:id="@+id/youTubeTitle"
         android:layout_width="352dp"
         android:layout_height="101dp"
         android:gravity="center_horizontal"
         android:text="TextView"
-        android:textColor="#151515"
+        android:textColor="#454444"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="48dp" />
 
     <Button
@@ -23,7 +42,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Video"
-        tools:layout_editor_absoluteX="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="461dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

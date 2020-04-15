@@ -33,6 +33,7 @@ public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnC
         Intent intent=getIntent();
         Bundle extras=intent.getExtras();
         String topic= (String) extras.get("topic_title");
+        setTitle(topic);
 
         videos = YouTubeVideo.getVideo(topic);
 

@@ -3,4 +3,5 @@
     <string name="score_rank">Rank</string>
     <string name="user_name">User Name</string>
     <string name="user_score">xxx points</string>
+    <string name="topics">Topics</string>
 </resources>

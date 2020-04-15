@@ -24,7 +24,7 @@ public class PdfList extends AppCompatActivity implements PdfAdapter.OnClickList
         Intent intent=getIntent();
         Bundle extras=intent.getExtras();
         String topic= (String) extras.get("topic_title1");
-
+        setTitle(topic);
         pdf = Pdf.getPdf(topic);
 
 
