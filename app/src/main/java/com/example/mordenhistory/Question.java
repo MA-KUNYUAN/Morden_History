@@ -1,5 +1,10 @@
 package com.example.mordenhistory;
 
+import com.example.mordenhistory.Database.DatabaseHelp;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Question {
     private String question;
     private String topic;
@@ -67,5 +72,21 @@ public class Question {
 
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    public static ArrayList<Question> getQuestions(String title, List<Question> array){
+
+
+        ArrayList<Question> question=new ArrayList<>();
+        for(int i=0; i<array.size(); i++){
+            if((array.get(i).getTopic()).equals(title)) {
+                question.add(array.get(i));
+            }
+        }
+
+
+        return question;
+
+
     }
 }

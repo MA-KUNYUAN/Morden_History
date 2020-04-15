@@ -47,7 +47,7 @@ public class ActualQuiz extends AppCompatActivity {
     private long timeLeftInMillis;
 
 
-
+    private List<Question> entireQuestionList;
     private List<Question> questionList;
 
     //count the amount of questions shown
@@ -90,9 +90,15 @@ public class ActualQuiz extends AppCompatActivity {
         //initialising helper class
         //and getting the questions
 
+        Intent intent=getIntent();
+        Bundle extras=intent.getExtras();
+        String topic= (String) extras.get("topic_title");
+
         DatabaseHelp dbHelper = new DatabaseHelp(this);
-        questionList = dbHelper.getAllQuestions();
-        questionCountTotal = questionList.size();
+
+        entireQuestionList=dbHelper.getAllQuestions();
+        questionList = Question.getQuestions(topic,entireQuestionList);
+                questionCountTotal = questionList.size();
         //ensure question are in random order
         Collections.shuffle(questionList);
 

@@ -135,7 +135,7 @@ public class Topics implements Parcelable {
      americanRPdf.add(new Pdf("American_Revolution.pdf"));
      frenchRPdf.add(new Pdf("French_Revolution.pdf"));
      imperialismRPdf.add(new Pdf("Imperialism.pdf"));
-     industrialRPdf.add(new Pdf("Industrial_Revoltion.pdf"));
+     industrialRPdf.add(new Pdf("Industrial_Revolution.pdf"));
 
      ArrayList<Quiz> enlightmentQuiz=new ArrayList<>();
      ArrayList<Quiz> americanQuiz=new ArrayList<>();
