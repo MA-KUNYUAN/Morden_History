@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mordenhistory.R;
 
 import java.util.List;
-
+/*
 public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.MyViewHolder> {
+
 
     public LeaderAdapter(List<Coin> myArray) {
         this.myArray = myArray;
@@ -54,3 +55,5 @@ public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.MyViewHold
     }
 
 }
+
+ */

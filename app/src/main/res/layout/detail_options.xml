@@ -50,6 +50,7 @@
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
         android:layout_marginTop="34dp"
+        android:onClick="takeQuiz"
         android:text="Quiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/readings" />
