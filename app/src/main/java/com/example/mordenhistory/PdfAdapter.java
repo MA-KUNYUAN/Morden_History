@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+//follows similar logic than previous adapters
 public class PdfAdapter extends RecyclerView.Adapter<PdfAdapter.ViewHolder> {
 
     private final OnClickListener onCklickListner;
