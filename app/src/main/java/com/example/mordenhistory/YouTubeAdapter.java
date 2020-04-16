@@ -14,14 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//adapter follows a similar logic to the TopicAdapter
 public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHolder> {
 
     private final OnClickListener onCklickListner;
 
-
-    //private final OnClickListener OnCklickListner;
-
-    //setting up the OnClickListener Interface that will be implemented by the main activity as wel as the recyclerView
     public interface OnClickListener {
         void OnClick(int position);
     }
@@ -30,7 +28,6 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView videoName;
-        //public TextView peroid;
         OnClickListener onClickListener;
 
 
@@ -40,14 +37,12 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
             super(itemView);
 
             videoName = (TextView) itemView.findViewById(R.id.youTubeName);
-            //peroid=(TextView) itemView.findViewById(R.id.peroid);
             this.onClickListener = onClickListener;
             itemView.setOnClickListener(this);
 
         }
 
 
-        // OnClick method which will help determine which item was selected by the used
         @Override
         public void onClick(View v) {
             onClickListener.OnClick(getAdapterPosition());
@@ -67,20 +62,17 @@ public class YouTubeAdapter extends RecyclerView.Adapter<YouTubeAdapter.ViewHold
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        // Inflate the custom layout
         View coinView = inflater.inflate(R.layout.you_tube_item, parent, false);
 
-        // Return a new holder instance
+
         ViewHolder viewHolder = new ViewHolder(coinView, onCklickListner);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(YouTubeAdapter.ViewHolder viewHolder, int position) {
-        // Get the data model based on position
-        YouTubeVideo topic = mVid.get(position);
 
-        // Set item views based on your views and data model
+        YouTubeVideo topic = mVid.get(position);
         TextView textView;
         textView = viewHolder.videoName;
         textView.setText(topic.getName());

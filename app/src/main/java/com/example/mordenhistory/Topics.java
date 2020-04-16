@@ -11,8 +11,8 @@ import java.util.Vector;
 import java.util.function.Predicate;
 
 //creating the topic class
-  // the class will hold each topics name, the time peroid of the topic as well as the youtube videos and
-  //Parcelable defines a way to package objects
+// the class will hold each topics name, the time peroid of the topic as well as the youtube videos, pdf attached to the topic
+//Parcelable defines a way a object packaged
 public class Topics implements Parcelable {
 
       protected Topics(Parcel in) {
@@ -41,15 +41,15 @@ public class Topics implements Parcelable {
     private String peroid;
     private ArrayList<Pdf> pdf;
     private ArrayList<YouTubeVideo> youtube;
-    private ArrayList<Quiz> quiz;
 
 
-    public Topics(String name, String peroid, ArrayList<Pdf> pdf, ArrayList<YouTubeVideo> youtube, ArrayList<Quiz> quiz) {
+
+    public Topics(String name, String peroid, ArrayList<Pdf> pdf, ArrayList<YouTubeVideo> youtube) {
         this.name = name;
         this.peroid = peroid;
         this.pdf = pdf;
         this.youtube = youtube;
-        this.quiz = quiz;
+
 
     }
 
@@ -77,13 +77,7 @@ public class Topics implements Parcelable {
           this.youtube = youtube;
       }
 
-      public ArrayList<Quiz> getQuiz() {
-        return quiz;
-    }
 
-    public void setQuiz(ArrayList<Quiz> quiz) {
-        this.quiz = quiz;
-    }
 
     public String getName() {
         return name;
@@ -137,23 +131,13 @@ public class Topics implements Parcelable {
      imperialismRPdf.add(new Pdf("Imperialism.pdf"));
      industrialRPdf.add(new Pdf("Industrial_Revolution.pdf"));
 
-     ArrayList<Quiz> enlightmentQuiz=new ArrayList<>();
-     ArrayList<Quiz> americanQuiz=new ArrayList<>();
-     ArrayList<Quiz> frenchQuiz=new ArrayList<>();
-     ArrayList<Quiz> industrialQuiz=new ArrayList<>();
-     ArrayList<Quiz> imperialismQuiz=new ArrayList<>();
 
-     enlightmentQuiz.add(new Quiz());
-     americanQuiz.add(new Quiz());
-     frenchQuiz.add(new Quiz());
-     industrialQuiz.add(new Quiz());
-     imperialismQuiz.add(new Quiz());
 
-     topics.add(new Topics("Enlightenment", "1750-1789", enlightmentPdf, youTubeEnlighment, enlightmentQuiz  ));
-     topics.add(new Topics("American Revolution", "1763-1812", americanRPdf, youTubeAmericanR, americanQuiz));
-        topics.add(new Topics("French Revolution", "1744-1799", frenchRPdf, youTubeFrenchR, frenchQuiz));
-        topics.add(new Topics("Industrial Revolution", "1750-1890", industrialRPdf, youTubeIndustrialR,industrialQuiz));
-        topics.add(new Topics("The age of Imperialism", "1848-1940", imperialismRPdf, youTubeImperialism, imperialismQuiz));
+     topics.add(new Topics("Enlightenment", "1750-1789", enlightmentPdf, youTubeEnlighment));
+     topics.add(new Topics("American Revolution", "1763-1812", americanRPdf, youTubeAmericanR));
+        topics.add(new Topics("French Revolution", "1744-1799", frenchRPdf, youTubeFrenchR));
+        topics.add(new Topics("Industrial Revolution", "1750-1890", industrialRPdf, youTubeIndustrialR));
+        topics.add(new Topics("The age of Imperialism", "1848-1940", imperialismRPdf, youTubeImperialism));
 
 
         return topics;

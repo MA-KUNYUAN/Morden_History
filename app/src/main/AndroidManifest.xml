@@ -16,16 +16,10 @@
         <activity android:name=".PdfView" />
         <activity android:name=".PdfList" />
         <activity android:name=".DetailYoutube" />
-        <activity android:name=".YouTubeList"/>
+        <activity android:name=".YouTubeList" />
         <activity android:name=".Leaderboard" />
         <activity android:name=".Settings" />
-        <activity android:name=".dashboard" />
-        <activity android:name=".Detail_Option"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
+        <activity android:name=".Detail_Option" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

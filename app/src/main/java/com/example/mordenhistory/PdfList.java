@@ -43,33 +43,6 @@ public class PdfList extends AppCompatActivity implements PdfAdapter.OnClickList
     }
 
 
-    /*
-    private void launchApp() {
-
-        RecyclerView rvPdf = (RecyclerView) findViewById(R.id.pdf_rv);
-
-        Intent intent=getIntent();
-        Bundle extras=intent.getExtras();
-        String topic= (String) extras.get("topic_title1");
-
-       pdf = Pdf.getPdf(topic);
-
-
-
-
-      // String pdfname=pdf.get(0).namePDF;
-
-
-        PdfAdapter adapter=new PdfAdapter(pdf, (PdfAdapter.OnClickListener)this);
-
-        //TopicAdapter adapter = new TopicAdapter(topic, (TopicAdapter.OnClickListener) this);
-
-        rvPdf.setAdapter(adapter);
-        rvPdf.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-     */
 
     @Override
     public void OnClick(int position) {

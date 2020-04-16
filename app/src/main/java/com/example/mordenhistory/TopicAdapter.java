@@ -11,13 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 //setting up the topicAdapter that will be used in the MainActivity that will display all the topics through the use of a recyclerView
+//all other adapter will follow a similar logic to this adapter
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> {
 
     private final OnClickListener onCklickListner;
 
 
-
-    //private final OnClickListener OnCklickListner;
 
     //setting up the OnClickListener Interface that will be implemented by the main activity as wel as the recyclerView
     public interface OnClickListener {
@@ -25,6 +24,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
     }
 
 
+
+    //implements viewholder class
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView topicName;
@@ -43,7 +44,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         }
 
 
-// OnClick method which will help determine which item was selected by the used
+// OnClick method which will help determine which item was selected by the user
         @Override
         public void onClick(View v) {
             onClickListener.OnClick(getAdapterPosition());
@@ -52,12 +53,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
 
     private List<Topics> mTopic;
 
+    //adapter constructor has been created
     public  TopicAdapter(List<Topics> coins, OnClickListener mOnClickListner){
         mTopic=coins;
         this.onCklickListner=mOnClickListner;
 
     }
 
+    //a new empty view is created and added to the pool
     @Override
     public TopicAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -71,6 +74,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         return viewHolder;
     }
 
+    //populates view with data
     @Override
     public void onBindViewHolder(TopicAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position

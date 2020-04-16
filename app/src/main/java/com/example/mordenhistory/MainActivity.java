@@ -29,58 +29,28 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
 
 
         //setting up bottom navigation view
+        //this will be done in the settings as well as the LeaderBoard activities
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         if(bottomNavigationView == null){
             System.out.println("Reference is null");
         }
         //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        //connecting bottom navigataion view with menu
+        //connecting bottom navigation view with menu
+        //this will be done in the settings as well as the LeaderBoard activities
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
-
-/*
-        //setting up the actions of the OnClickListener when each Icon is pressed
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-
-                    case R.id.dashboard:
-
-                        break;
-
-                    case R.id.leaderboard:
-                        Intent intent2 = new Intent(MainActivity.this, Leaderboard.class);
-                        startActivity(intent2);
-                        //BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-                        //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-                        break;
-
-                    case R.id.settings:
-                        Intent intent3 = new Intent(MainActivity.this, Settings.class);
-                        startActivity(intent3);
-                        break;
-
-                }
-
-
-                return false;
-            }
-        });
-*/
-         /*
-mitchtabian, AppBarLayouts(2017)
-https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Navigation
-  */
 
         //recycler view method is called
 
         launchApp();
     }
 
+    //this determines which activity the the user will go to when a particular item on the bottom navigation view is pressed
+    //setting up the actions of the OnClickListener when each Icon is pressed
+    //this will be done in the settings as well as the LeaderBoard activities
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -93,8 +63,7 @@ https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Na
                         case R.id.leaderboard:
                             Intent intent2 = new Intent(MainActivity.this, Leaderboard.class);
                             startActivity(intent2);
-                            //BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-                            //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
                             return true;
 
                         case R.id.settings:
