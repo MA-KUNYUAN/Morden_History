@@ -20,7 +20,8 @@
         <activity android:name=".Leaderboard" />
         <activity android:name=".Settings" />
         <activity android:name=".Detail_Option" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+           android:label="Modern History" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

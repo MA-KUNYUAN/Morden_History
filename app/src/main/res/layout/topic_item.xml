@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#88C8C8C8">
+    android:background="#88C8C8C8"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#50FFBF00">
+        android:background="@color/cardview_light_background">
 
         <TextView
             android:id="@+id/topicName"
@@ -33,7 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/design_default_color_on_secondary"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/topicName"

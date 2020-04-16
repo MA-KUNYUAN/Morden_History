@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,6 +36,15 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         if(bottomNavigationView == null){
             System.out.println("Reference is null");
+
+            getParent().getParent().setTitle("Modern History");
+
+            //setTitle("My new title");
+
+
+
+
+
         }
         //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         //connecting bottom navigation view with menu
