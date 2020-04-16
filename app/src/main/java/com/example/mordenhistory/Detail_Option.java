@@ -27,6 +27,7 @@ public class Detail_Option extends AppCompatActivity {
 
     }
 
+    //Onclick method for You Tube Videos Button
     public void YouTubeVideo(View v){
         Intent intent=new Intent(Detail_Option.this, YouTubeList.class );
         TextView title2=(TextView)findViewById(R.id.title1);
@@ -36,7 +37,7 @@ public class Detail_Option extends AppCompatActivity {
 
     }
 
-
+    //Onclick method for Pdf Videos Button
     public void PdfView(View view){
         Intent intent=new Intent(Detail_Option.this, PdfList.class );
         TextView title2=(TextView)findViewById(R.id.title1);
@@ -46,7 +47,7 @@ public class Detail_Option extends AppCompatActivity {
 
     }
 
-
+    //Onclick method for Pdf Quiz Button
     public void takeQuiz(View view){
         Intent intent=new Intent(Detail_Option.this, StartQuiz.class);
         TextView title2=(TextView)findViewById(R.id.title1);

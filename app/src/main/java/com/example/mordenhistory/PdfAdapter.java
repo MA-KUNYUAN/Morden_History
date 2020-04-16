@@ -15,7 +15,7 @@ public class PdfAdapter extends RecyclerView.Adapter<PdfAdapter.ViewHolder> {
     private final OnClickListener onCklickListner;
 
 
-    //private final OnClickListener OnCklickListner;
+
 
     //setting up the OnClickListener Interface that will be implemented by the main activity as wel as the recyclerView
     public interface OnClickListener {
@@ -36,14 +36,13 @@ public class PdfAdapter extends RecyclerView.Adapter<PdfAdapter.ViewHolder> {
             super(itemView);
 
             pdfName1 = (TextView) itemView.findViewById(R.id.pdfName);
-            //peroid=(TextView) itemView.findViewById(R.id.peroid);
             this.onClickListener = onClickListener;
             itemView.setOnClickListener(this);
 
         }
 
 
-        // OnClick method which will help determine which item was selected by the used
+        // OnClick method which will help determine which item was selected by the user
         @Override
         public void onClick(View v) {
             onClickListener.OnClick(getAdapterPosition());

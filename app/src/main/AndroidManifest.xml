@@ -19,7 +19,6 @@
         <activity android:name=".YouTubeList" />
         <activity android:name=".Leaderboard" />
         <activity android:name=".Settings" />
-        <activity android:name=".dashboard" />
         <activity android:name=".Detail_Option" />
         <activity android:name=".MainActivity">
             <intent-filter>

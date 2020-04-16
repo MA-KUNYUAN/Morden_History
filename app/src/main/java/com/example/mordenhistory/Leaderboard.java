@@ -19,56 +19,19 @@ public class Leaderboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
+
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         if(bottomNavigationView == null){
             System.out.println("Reference is null");
         }
-        //setting up bottom navigation view
 
-//        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-        //connecting bottom navigation view with menu
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
 
-        //setting up the actions of the OnClickListener when each Icon is pressed
 
-        /*
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-
-                    case R.id.dashboard:
-                        Intent intent1 = new Intent(Leaderboard.this, MainActivity.class);
-                        startActivity(intent1);
-                        break;
-
-                    case R.id.leaderboard:
-                        Intent intent2 = new Intent(Leaderboard.this, Leaderboard.class);
-                        startActivity(intent2);
-                        break;
-
-                    case R.id.settings:
-                        Intent intent3 = new Intent(Leaderboard.this, Settings.class);
-                        startActivity(intent3);
-                        break;
-
-                }
-
-
-                return false;
-            }
-        });
-
-         */
-
-   /*
-mitchtabian, AppBarLayouts(2017)
-https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Navigation
-  */
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
@@ -85,8 +48,7 @@ https://github.com/mitchtabian/AppBarLayouts/tree/master/ActionBar%20Bottom%20Na
 
                         case R.id.leaderboard:
 
-                            //BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-                            //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
                             return true;
 
                         case R.id.settings:

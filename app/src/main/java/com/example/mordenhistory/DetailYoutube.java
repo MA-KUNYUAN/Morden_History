@@ -12,6 +12,8 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+//Using the YouTube Android Player Api which will  incorporate video playback functionality
+//DetailYouTube is a subclass of YouTubeBaseActivity which is required to make YouTubePlayerView
 public class DetailYoutube extends YouTubeBaseActivity {
     Button button;
     private YouTubePlayerView youTubePlayerView;
@@ -26,6 +28,8 @@ public class DetailYoutube extends YouTubeBaseActivity {
 
         youTubePlayerView=findViewById(R.id.youtube_view);
 
+        //will listen for initialising success or failure
+        //if successful we will load the video url
         onInitializedListener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
@@ -37,6 +41,8 @@ public class DetailYoutube extends YouTubeBaseActivity {
 
             }
         };
+
+        //if play button is pressed the youTube video will start playing
         Button button1=(Button) findViewById(R.id.playVid);
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +53,7 @@ public class DetailYoutube extends YouTubeBaseActivity {
             }
         });
 
+        //setting the TextView as the You Tube Video's name
         if (getIntent().hasExtra("selected_note1")) {
             YouTubeVideo video1 = getIntent().getParcelableExtra("selected_note1");
 

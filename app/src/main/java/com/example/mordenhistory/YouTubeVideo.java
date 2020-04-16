@@ -6,6 +6,8 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.Vector;
 
+//class for you tube video
+//the class contains the videos name as well as the video's URL
 public class YouTubeVideo implements Parcelable {
     public String URL;
     public String name;
@@ -52,6 +54,9 @@ public class YouTubeVideo implements Parcelable {
         this.name = name;
     }
 
+
+    //The method will only get the YouTube Video's associated to the specific title
+
     public static ArrayList<YouTubeVideo> getVideo(String title){
         ArrayList<Topics> topic=Topics.getTopics();
         ArrayList<Topics> topic2=new ArrayList<>();
@@ -81,6 +86,7 @@ public class YouTubeVideo implements Parcelable {
 
     }
 
+    //the method will ensure that that the correct Youtube Video by comparing the name given to all the youtube video's names
     public static YouTubeVideo pick(String nameR){
         ArrayList<Topics> topic=Topics.getTopics();
        ArrayList<YouTubeVideo> vid=new ArrayList<>();
