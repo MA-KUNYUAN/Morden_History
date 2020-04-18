@@ -29,7 +29,7 @@ public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.MyViewHold
     }
 
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.ScoreRank.setText(String.valueOf(myArray.get(position).getID()));
+        holder.ScoreRank.setText(String.valueOf(position+1));
         holder.UserName.setText(myArray.get(position).getUserName());
         holder.UserScore.setText(String.valueOf(myArray.get(position).getTotalScore())+" points");
 

@@ -54,7 +54,7 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
 
     public Cursor getUserInfo(){
         SQLiteDatabase db =this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE_NAME,null);
+        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE_NAME+" ORDER BY "+COL_5+" DESC",null);
         return res;
     }
 }
