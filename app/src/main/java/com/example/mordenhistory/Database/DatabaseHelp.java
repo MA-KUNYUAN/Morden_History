@@ -52,11 +52,6 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         fillQuestionsTable();
     }
 
-//    public void onCreate2(SQLiteDatabase db){
-//        this.db = db;
-//
-//    }
-
     //oncreate will only be called the first time we try and access the database
     //otherwise it would not be called again unless we delete the app from our phone
     //if we want to add additional column to our table the onUpgrade method will be called
