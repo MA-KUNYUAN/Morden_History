@@ -2,7 +2,7 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="#FFFDBF03">
     <item>
         <shape android:shape="oval">
-            <solid android:color="#70FDBF03"/>
+            <solid android:color="#80FDBF03"/>
         </shape>
     </item>
 </ripple>
