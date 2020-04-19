@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#88C8C8C8"
+    android:layout_margin="8dp"
+    android:background="@drawable/dashboard_row_button"
     android:clickable="true"
-    android:focusable="true"
-    android:layout_margin="8dp">
+    android:focusable="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cardview_light_background">
+        android:background="@drawable/dashboard_row_button">
 
         <TextView
             android:id="@+id/topicName"
