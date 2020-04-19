@@ -42,19 +42,19 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
         final String SQL_CREATE_USERS_TABLE ="CREATE TABLE IF NOT EXISTS "+USER_TABLE_NAME+"("+COL_1+" INTEGER PRIMARY KEY AUTOINCREMENT, "
                 +COL_2+" TEXT UNIQUE, "
                 +COL_3+" TEXT NOT NULL, "
-                +COL_4+" TEXT NOT NULL,"
-                +COL_5+" INTEGER DEFAULT 0,"
-                +COL_6+"Text NOT NULL,"
-                +Col_7+"INTEGER NOT NULL,"
-                +Col_8+"INTEGER NOT NULL,"
-                +Col_9+"INTEGER NOT NULL,"
-                +Col_10+"INTEGER NOT NULL,"
-                +Col_11+"INTEGER NOT NULL,"
-                +Col_12+"INTEGER NOT NULL,"
-                +Col_13+"INTEGER NOT NULL,"
-                +Col_14+"INTEGER NOT NULL,"
-                +Col_15+"INTEGER NOT NULL,"
-                +Col_16+"INTEGER NOT NULL"+");";
+                +COL_4+" INTEGER DEFAULT 0,"
+                +COL_5+" TEXT NOT NULL,"
+                +COL_6+" TEXT NOT NULL,"
+                +Col_7+" INTEGER DEFAULT 0,"
+                +Col_8+" INTEGER DEFAULT 0,"
+                +Col_9+" INTEGER DEFAULT 0,"
+                +Col_10+" INTEGER DEFAULT 0,"
+                +Col_11+" INTEGER DEFAULT 0,"
+                +Col_12+" INTEGER DEFAULT 0,"
+                +Col_13+" INTEGER DEFAULT 0,"
+                +Col_14+" INTEGER DEFAULT 0,"
+                +Col_15+" INTEGER DEFAULT 0,"
+                +Col_16+" INTEGER DEFAULT 0"+");";
         db.execSQL(SQL_CREATE_USERS_TABLE);
     }
 
@@ -97,7 +97,16 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
 
     public Cursor getUserInfo(){
         SQLiteDatabase db =this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE_NAME+" ORDER BY "+COL_5+" DESC",null);
+        Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE_NAME+" ORDER BY "+COL_4+" DESC",null);
         return res;
     }
+
+    public Cursor getCurrentUserInfor(){
+
+        SQLiteDatabase db =this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM "+USER_TABLE_NAME+" WHERE "+COL_3+"='Peter'", null);
+       return cursor;
+    }
+
+
 }

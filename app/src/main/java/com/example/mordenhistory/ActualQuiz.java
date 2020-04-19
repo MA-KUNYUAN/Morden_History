@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mordenhistory.Database.DatabaseHelp;
+import com.example.mordenhistory.Database.DatabaseHelp2;
 
 import java.util.Collections;
 import java.util.List;
@@ -65,6 +68,10 @@ public class ActualQuiz extends AppCompatActivity {
     private boolean answered;
 
     private long backPressedTime;
+
+    DatabaseHelp2 myDB=new DatabaseHelp2(this);
+
+    User user;
 
 
 
@@ -219,8 +226,50 @@ public class ActualQuiz extends AppCompatActivity {
         //determines whether the answer number of the selected is correct for the current question
 
         if (answerNr == currentQuestion.getAnswerNr()) {
+            Intent intent=getIntent();
+            Bundle extras=intent.getExtras();
+            String topic= (String) extras.get("topic_title");
             score++;
             textViewScore.setText("Score: " + score);
+            Cursor c = myDB.getCurrentUserInfor();
+            if(c != null){
+                //myArray = new ArrayList<User>();
+                while(c.moveToNext()){
+                    user=new User(c.getInt(3), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15));
+                }
+
+                if (topic.equals("Enlightenment")){
+
+                        SQLiteDatabase db=myDB.getWritableDatabase();
+                        db.execSQL("UPDATE user_table SET enlightenmentScore="+score+" WHERE UserName='Peter'");
+                        db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+                }else if(topic.equals("American Revolution")){
+                    SQLiteDatabase db=myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET americanRevolutionScore="+score+" WHERE UserName='Peter'");
+                    db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+                }else if(topic.equals("French Revolution")){
+                    SQLiteDatabase db=myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET frenchRevolutionScore="+score+" WHERE UserName='Peter'");
+                    db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+
+                }else if(topic.equals("Industrial Revolution")){
+
+                    SQLiteDatabase db=myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET industrialRevolutionScore="+score+" WHERE UserName='Peter'");
+                    db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+                }else if(topic.equals("Imperialism")){
+
+                    SQLiteDatabase db=myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET imperialismScore="+score+" WHERE UserName='Peter'");
+                    db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+                }
+
+            }
         }
 
         showSolution();

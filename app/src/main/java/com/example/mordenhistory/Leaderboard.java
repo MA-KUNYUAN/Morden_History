@@ -40,7 +40,7 @@ public class Leaderboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-
+/*
         myDB = new DatabaseHelp2(this);
  boolean inInserted = myDB.insertData("Amy Wilson","Amy",56,"amy.wilson@gmail.com", "amy123", 15, 1, 10, 1, 12, 1, 9, 1, 10, 1);
  boolean inInserted2 = myDB.insertData("Kathy Jones","Kathy",49,"kathy.Jones@gmail.com", "kathy123", 12, 1, 5, 1, 11, 1, 12, 1, 9, 1);
@@ -50,11 +50,13 @@ public class Leaderboard extends AppCompatActivity {
  boolean inInserted6 = myDB.insertData(user.getName(),user.getUsername(), user.getScore(), user.getEmail(),user.getPassword(), user.getEnlightenmentScore(), user.getEnlightenmentAttempt(), user.getAmericanRevolutionScore(), user.getAmericanRevolutionAttempt(), user.getFrenchRevolutionScore(), user.getFrenchRevolutionAttempt(), user.getIndustrialRevolutionScore(), user.getIndustrialRevolutionAttempt(),user.getImperialismScore(), user.getImperialismAttempt());
 
 
+ */
+        myDB = new DatabaseHelp2(this);
         Cursor c = myDB.getUserInfo();
         if(c != null){
             myArray = new ArrayList<UserInfo>();
             while(c.moveToNext()){
-                myArray.add(new UserInfo(c.getInt(0),c.getString(1),c.getString(2),c.getString(3),c.getInt(4)));
+                myArray.add(new UserInfo(c.getInt(0),c.getString(1),c.getString(2),c.getInt(3),c.getString(4),c.getString(5), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15)));
             }
         }
 

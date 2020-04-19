@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mordenhistory.Database.DatabaseHelp2;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
     ArrayList<Topics> topic;
     BottomNavigationView bottomNavigationView;
 
+    DatabaseHelp2 myDB;
+
+    User user=new User(0, 0, 0, 0, 0 , 0 ,0 , 0 ,0, 0 ,0  );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,16 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
         //recycler view method is called
 
         launchApp();
+
+        myDB = new DatabaseHelp2(this);
+        boolean inInserted = myDB.insertData("Amy Wilson","Amy",56,"amy.wilson@gmail.com", "amy123", 15, 1, 10, 1, 12, 1, 9, 1, 10, 1);
+        boolean inInserted2 = myDB.insertData("Kathy Jones","Kathy",49,"kathy.Jones@gmail.com", "kathy123", 12, 1, 5, 1, 11, 1, 12, 1, 9, 1);
+        boolean inInserted3 = myDB.insertData("Alec Hughes","Alec",65,"alecHughes@gmail.com", "alec123", 15, 1, 15, 1, 11, 1, 12, 1, 12, 1);
+        boolean inInserted4 = myDB.insertData("John Smith","John",40,"johm.Smith100@gmail.com", "john3000", 10, 1, 10, 1, 5, 1, 5, 1, 10, 1);
+        boolean inInserted5 = myDB.insertData("Shelly Woolcot","Shelly",50,"shelly.woolcot@gmail.com", "shelly1000", 12, 1, 12, 1, 9, 1, 8, 1, 11, 1);
+        boolean inInserted6 = myDB.insertData(user.getName(),user.getUsername(), user.getScore(), user.getEmail(),user.getPassword(), user.getEnlightenmentScore(), user.getEnlightenmentAttempt(), user.getAmericanRevolutionScore(), user.getAmericanRevolutionAttempt(), user.getFrenchRevolutionScore(), user.getFrenchRevolutionAttempt(), user.getIndustrialRevolutionScore(), user.getIndustrialRevolutionAttempt(),user.getImperialismScore(), user.getImperialismAttempt());
+
+
     }
 
     //this determines which activity the the user will go to when a particular item on the bottom navigation view is pressed
