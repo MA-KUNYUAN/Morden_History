@@ -59,7 +59,7 @@ public class NoteFragment extends Fragment {
         imageView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().popBackStackImmediate();
+                getActivity().getSupportFragmentManager().beginTransaction().remove(NoteFragment.this).commit();
             }
         });
         //Invoke the database
