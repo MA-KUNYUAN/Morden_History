@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActualQuiz"></activity>
+        <activity android:name=".Instructions"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".ActualQuiz" />
         <activity android:name=".StartQuiz" />
         <activity android:name=".PdfView" />
         <activity android:name=".PdfList" />
@@ -20,8 +22,9 @@
         <activity android:name=".Leaderboard" />
         <activity android:name=".Settings" />
         <activity android:name=".Detail_Option" />
-        <activity android:name=".MainActivity"
-           android:label="Modern History" >
+        <activity
+            android:name=".MainActivity"
+            android:label="Modern History">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

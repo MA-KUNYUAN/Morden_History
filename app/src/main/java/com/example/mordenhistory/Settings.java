@@ -7,8 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class Settings extends AppCompatActivity {
 
@@ -22,7 +28,7 @@ public class Settings extends AppCompatActivity {
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        if(bottomNavigationView == null){
+        if (bottomNavigationView == null) {
             System.out.println("Reference is null");
         }
 
@@ -30,8 +36,34 @@ public class Settings extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
 
+        ListView list = (ListView) findViewById(R.id.settingsList);
+
+        ArrayList<String> item = new ArrayList<>();
+        item.add("Profile");
+        item.add("Instructions");
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, item);
+
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position==0){
+                    Intent intent4=new Intent(view.getContext(), Profile.class);
+                    startActivity(intent4);
+                }
+
+
+                if(position==1){
+                    Intent intent5=new Intent(view.getContext(), Instructions.class);
+                    startActivity(intent5);
+                }
+            }
+        });
 
     }
+
+
 
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
