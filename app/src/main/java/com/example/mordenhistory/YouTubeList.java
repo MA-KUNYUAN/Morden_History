@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+
+import com.example.mordenhistory.Adapter.YouTubeAdapter;
+import com.example.mordenhistory.Models.YouTubeVideo;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,7 @@ public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnC
         String topic= (String) extras.get("topic_title");
         setTitle(topic);
 
+        //will return only the videos associated to the topic
         videos = YouTubeVideo.getVideo(topic);
 
       YouTubeAdapter adapter=new YouTubeAdapter(videos, (YouTubeAdapter.OnClickListener)this);

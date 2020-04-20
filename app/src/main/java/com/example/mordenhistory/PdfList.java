@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.mordenhistory.Adapter.PdfAdapter;
+import com.example.mordenhistory.Models.Pdf;
+
 import java.util.ArrayList;
 
 public class PdfList extends AppCompatActivity implements PdfAdapter.OnClickListener {
@@ -25,18 +28,11 @@ public class PdfList extends AppCompatActivity implements PdfAdapter.OnClickList
         Bundle extras=intent.getExtras();
         String topic= (String) extras.get("topic_title1");
         setTitle(topic);
+        //gets relevant pdf by passing the topic name to the method
         pdf = Pdf.getPdf(topic);
 
-
-
-
-        // String pdfname=pdf.get(0).namePDF;
-
-
+        //sets up the recyclerView
         PdfAdapter adapter=new PdfAdapter(pdf, (PdfAdapter.OnClickListener)this);
-
-        //TopicAdapter adapter = new TopicAdapter(topic, (TopicAdapter.OnClickListener) this);
-
         rvPdf.setAdapter(adapter);
         rvPdf.setLayoutManager(new LinearLayoutManager(this));
 
@@ -44,6 +40,8 @@ public class PdfList extends AppCompatActivity implements PdfAdapter.OnClickList
 
 
 
+    //OnClick method if an item in the recyclerView is clicked then the user will go the the PdfView screen
+    //The pdf name is also passed
     @Override
     public void OnClick(int position) {
 

@@ -9,11 +9,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.mordenhistory.Adapter.TopicAdapter;
 import com.example.mordenhistory.Database.DatabaseHelp2;
+import com.example.mordenhistory.Models.Topics;
+import com.example.mordenhistory.Models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
 
         launchApp();
 
+        //inserting data onto the database with all the users of the app as well as there scores
+        // this data will be displayed by the leaderboard so that user can track their performance
         myDB = new DatabaseHelp2(this);
         boolean inInserted = myDB.insertData("Amy Wilson","Amy",56,"amy.wilson@gmail.com", "amy123", 15, 1, 10, 1, 12, 1, 9, 1, 10, 1);
         boolean inInserted2 = myDB.insertData("Kathy Jones","Kathy",49,"kathy.Jones@gmail.com", "kathy123", 12, 1, 5, 1, 11, 1, 12, 1, 9, 1);

@@ -1,14 +1,9 @@
-package com.example.mordenhistory;
+package com.example.mordenhistory.Models;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.RequiresApi;
-
 import java.util.ArrayList;
-import java.util.Vector;
-import java.util.function.Predicate;
 
 //creating the topic class
 // the class will hold each topics name, the time peroid of the topic as well as the youtube videos, pdf attached to the topic
@@ -89,7 +84,7 @@ public class Topics implements Parcelable {
 
 
       //creating the data associated with each topic
-    //putting each new topics data in a Topic ArrayList
+    //putting each new topic in a Topic ArrayList
 
     public static ArrayList<Topics> getTopics(){
      ArrayList<Topics> topics=new ArrayList<>();

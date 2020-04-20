@@ -1,15 +1,16 @@
-package com.example.mordenhistory;
+package com.example.mordenhistory.Models;
 
+//This is the UerInfo class it represents all the users of the system
 public class UserInfo {
 
-    private int ID;
-    private String Name;
-    private String Username;
+    private int id;
+    private String name;
+    private String userName;
     private int score;
     private String email;
     private String password;
     private int enlightenmentScore;
-    private int EnlightenmentAttempt;
+    private int enlightenmentAttempt;
     private int americanRevolutionScore;
     private int americanRevolutionAttempt;
     private int frenchRevolutionScore;
@@ -23,15 +24,15 @@ public class UserInfo {
 
     }
 
-    public UserInfo(int ID, String name, String username, int score, String email, String password, int enlightenmentScore, int enlightenmentAttempt, int americanRevolutionScore, int americanRevolutionAttempt, int frenchRevolutionScore, int frenchRevolutionAttempt, int industrialRevolutionScore, int industrialRevolutionAttempt, int imperialismScore, int imperialismAttempt) {
-        this.ID = ID;
-        this.Name = name;
-       this.Username = username;
+    public UserInfo(int id, String name, String userName, int score, String email, String password, int enlightenmentScore, int enlightenmentAttempt, int americanRevolutionScore, int americanRevolutionAttempt, int frenchRevolutionScore, int frenchRevolutionAttempt, int industrialRevolutionScore, int industrialRevolutionAttempt, int imperialismScore, int imperialismAttempt) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
         this.score = score;
         this.email = email;
         this.password = password;
         this.enlightenmentScore = enlightenmentScore;
-        this.EnlightenmentAttempt = enlightenmentAttempt;
+        this.enlightenmentAttempt = enlightenmentAttempt;
         this.americanRevolutionScore = americanRevolutionScore;
         this.americanRevolutionAttempt = americanRevolutionAttempt;
         this.frenchRevolutionScore = frenchRevolutionScore;
@@ -42,28 +43,28 @@ public class UserInfo {
         this.imperialismAttempt = imperialismAttempt;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    public String getUsername() {
-        return Username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        Username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public int getScore() {
@@ -99,11 +100,11 @@ public class UserInfo {
     }
 
     public int getEnlightenmentAttempt() {
-        return EnlightenmentAttempt;
+        return enlightenmentAttempt;
     }
 
     public void setEnlightenmentAttempt(int enlightenmentAttempt) {
-        EnlightenmentAttempt = enlightenmentAttempt;
+        this.enlightenmentAttempt = enlightenmentAttempt;
     }
 
     public int getAmericanRevolutionScore() {

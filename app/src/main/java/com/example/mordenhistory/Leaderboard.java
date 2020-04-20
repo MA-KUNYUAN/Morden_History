@@ -13,10 +13,11 @@ import android.view.MenuItem;
 
 import com.example.mordenhistory.Adapter.LeaderAdapter;
 import com.example.mordenhistory.Database.DatabaseHelp2;
+import com.example.mordenhistory.Models.User;
+import com.example.mordenhistory.Models.UserInfo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Leaderboard extends AppCompatActivity {
 
@@ -40,17 +41,10 @@ public class Leaderboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-/*
-        myDB = new DatabaseHelp2(this);
- boolean inInserted = myDB.insertData("Amy Wilson","Amy",56,"amy.wilson@gmail.com", "amy123", 15, 1, 10, 1, 12, 1, 9, 1, 10, 1);
- boolean inInserted2 = myDB.insertData("Kathy Jones","Kathy",49,"kathy.Jones@gmail.com", "kathy123", 12, 1, 5, 1, 11, 1, 12, 1, 9, 1);
- boolean inInserted3 = myDB.insertData("Alec Hughes","Alec",65,"alecHughes@gmail.com", "alec123", 15, 1, 15, 1, 11, 1, 12, 1, 12, 1);
- boolean inInserted4 = myDB.insertData("John Smith","John",40,"johm.Smith100@gmail.com", "john3000", 10, 1, 10, 1, 5, 1, 5, 1, 10, 1);
- boolean inInserted5 = myDB.insertData("Shelly Woolcot","Shelly",50,"shelly.woolcot@gmail.com", "shelly1000", 12, 1, 12, 1, 9, 1, 8, 1, 11, 1);
- boolean inInserted6 = myDB.insertData(user.getName(),user.getUsername(), user.getScore(), user.getEmail(),user.getPassword(), user.getEnlightenmentScore(), user.getEnlightenmentAttempt(), user.getAmericanRevolutionScore(), user.getAmericanRevolutionAttempt(), user.getFrenchRevolutionScore(), user.getFrenchRevolutionAttempt(), user.getIndustrialRevolutionScore(), user.getIndustrialRevolutionAttempt(),user.getImperialismScore(), user.getImperialismAttempt());
+        setTitle("Leaderboard");
 
 
- */
+        //getting all user info
         myDB = new DatabaseHelp2(this);
         Cursor c = myDB.getUserInfo();
         if(c != null){
@@ -60,6 +54,7 @@ public class Leaderboard extends AppCompatActivity {
             }
         }
 
+        //setting up leaderboard recyclerview
         LeaderView = findViewById(R.id.LeaderView);
         LeaderView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);

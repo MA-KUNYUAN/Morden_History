@@ -24,7 +24,7 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-
+        setTitle("Settings");
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
@@ -36,6 +36,7 @@ public class Settings extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
 
+        //setting up Settings ListView
         ListView list = (ListView) findViewById(R.id.settingsList);
 
         ArrayList<String> item = new ArrayList<>();
@@ -45,15 +46,18 @@ public class Settings extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, item);
 
         list.setAdapter(adapter);
+
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // if the first item is clicked then user will move to the the Profile Activity
                 if(position==0){
                     Intent intent4=new Intent(view.getContext(), Profile.class);
                     startActivity(intent4);
                 }
 
 
+                //if the 2nd item is clicked then the user will move to the Instructions activity
                 if(position==1){
                     Intent intent5=new Intent(view.getContext(), Instructions.class);
                     startActivity(intent5);

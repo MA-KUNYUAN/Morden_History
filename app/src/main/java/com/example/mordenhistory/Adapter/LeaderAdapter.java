@@ -1,19 +1,16 @@
 package com.example.mordenhistory.Adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mordenhistory.R;
-import com.example.mordenhistory.UserInfo;
+import com.example.mordenhistory.Models.UserInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.MyViewHolder> {
     ArrayList<UserInfo> myArray;
@@ -30,7 +27,7 @@ public class LeaderAdapter extends RecyclerView.Adapter<LeaderAdapter.MyViewHold
 
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.ScoreRank.setText(String.valueOf(position+1));
-        holder.UserName.setText(myArray.get(position).getUsername());
+        holder.UserName.setText(myArray.get(position).getUserName());
         holder.UserScore.setText(String.valueOf(myArray.get(position).getScore())+" points");
 
     }

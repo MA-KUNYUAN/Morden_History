@@ -11,8 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelp2 extends SQLiteOpenHelper {
+    //database name
     public static final String DATABASE2_NAME = "UserInformation.db";
 
+    //table name and column names
     public static final String USER_TABLE_NAME = "user_table";
     public static final String COL_1 = "UID";
     public static final String COL_2 = "userFullName";
@@ -36,6 +38,7 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
     public DatabaseHelp2(Context context) {
         super(context, DATABASE2_NAME, null, DATABASE2_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         //create database table
@@ -64,7 +67,7 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
     }
 
 
-
+//method for inserting data into the table
     public boolean insertData(String userFullName,String UserName,Integer TotalScore,String email, String Password, Integer enlightenmentScore,
                               Integer EnlightenmentAttempt, Integer americanRevolutionScore, Integer americanRevolutionAttempt,
                               Integer frenchRevolutionScore, Integer frenchRevolutionAttempt, Integer industrialRevolutionScore,
@@ -95,12 +98,15 @@ public class DatabaseHelp2 extends SQLiteOpenHelper {
         }
     }
 
+    //method used to get all the users info
+    //It will be displayed in descending order as the user info will be displayed onto the leaderboard
     public Cursor getUserInfo(){
         SQLiteDatabase db =this.getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM "+USER_TABLE_NAME+" ORDER BY "+COL_4+" DESC",null);
         return res;
     }
 
+    //method used to get current user of the System which is Peter White
     public Cursor getCurrentUserInfor(){
 
         SQLiteDatabase db =this.getWritableDatabase();

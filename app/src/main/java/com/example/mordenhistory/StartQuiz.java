@@ -3,18 +3,15 @@ package com.example.mordenhistory;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mordenhistory.Database.DatabaseHelp2;
-
-import java.util.ArrayList;
+import com.example.mordenhistory.Models.User;
 
 public class StartQuiz extends AppCompatActivity {
 
@@ -52,11 +49,14 @@ public class StartQuiz extends AppCompatActivity {
 
         Cursor c = myDB.getCurrentUserInfor();
         if(c != null){
-            //myArray = new ArrayList<User>();
             while(c.moveToNext()){
                 user=new User(c.getInt(3), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15));
         }
 
+            //The if else statement determines whether the current user have attempted the quiz previously
+            // If user has the user will be unable to move to the next activity
+            //If the user hasn't then the user will be able to attempt the quiz
+            //The number of attempts will then be updated in the database
             if (topic.equals("Enlightenment")){
                 int attempt=user.getEnlightenmentAttempt();
                 if(attempt==0){
@@ -112,8 +112,6 @@ public class StartQuiz extends AppCompatActivity {
 
         }
 
-        //gets result back from the activity it starts
-        //startActivity(intent1);
 
     }
 

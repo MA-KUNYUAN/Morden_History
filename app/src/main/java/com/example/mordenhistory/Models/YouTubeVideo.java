@@ -1,12 +1,11 @@
-package com.example.mordenhistory;
+package com.example.mordenhistory.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
-import java.util.Vector;
 
-//class for you tube video
+//class for the YouTube videos
 //the class contains the videos name as well as the video's URL
 public class YouTubeVideo implements Parcelable {
     public String URL;
@@ -86,7 +85,7 @@ public class YouTubeVideo implements Parcelable {
 
     }
 
-    //the method will ensure that that the correct Youtube Video by comparing the name given to all the youtube video's names
+    //this method will return only the Videos associated the a particular topic name
     public static YouTubeVideo pick(String nameR){
         ArrayList<Topics> topic=Topics.getTopics();
        ArrayList<YouTubeVideo> vid=new ArrayList<>();

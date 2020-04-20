@@ -24,7 +24,7 @@
         <activity android:name=".Detail_Option" />
         <activity
             android:name=".MainActivity"
-            android:label="Modern History">
+            android:label="Topics">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

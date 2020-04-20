@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
-import com.example.mordenhistory.Question;
+import com.example.mordenhistory.Models.Question;
 import com.example.mordenhistory.QuizContract;
 
 import java.util.ArrayList;
@@ -250,3 +248,6 @@ public class DatabaseHelp extends SQLiteOpenHelper {
         return questionList;
     }
 }
+
+
+    //Coding in Flow. 2018. Multiple Choice App With Sqlite Integration. [online] Available at: <https://codinginflow.com/tutorials/android/quiz-app-with-sqlite/part-7-countdown-timer> [Accessed 20 April 2020].

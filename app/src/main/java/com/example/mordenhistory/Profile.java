@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.mordenhistory.Database.DatabaseHelp2;
+import com.example.mordenhistory.Models.User;
 
 public class Profile extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        setTitle("Profile");
+        //gets the current user of the app which is Peter White and contructs a User object
         Cursor c = myDB.getCurrentUserInfor();
         if (c != null) {
             //myArray = new ArrayList<User>();
@@ -32,6 +35,7 @@ public class Profile extends AppCompatActivity {
 
 
 
+        //sets TextViews with the details of Peter White
         name.setText(user.getName());
         userName.setText(user.getUsername());
         email.setText(user.getEmail());

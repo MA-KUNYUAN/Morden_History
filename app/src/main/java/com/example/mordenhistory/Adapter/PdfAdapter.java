@@ -1,4 +1,4 @@
-package com.example.mordenhistory;
+package com.example.mordenhistory.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mordenhistory.Models.Pdf;
+import com.example.mordenhistory.R;
 
 import java.util.List;
 

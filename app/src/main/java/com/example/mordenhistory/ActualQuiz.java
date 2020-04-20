@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.mordenhistory.Database.DatabaseHelp;
 import com.example.mordenhistory.Database.DatabaseHelp2;
+import com.example.mordenhistory.Models.Question;
+import com.example.mordenhistory.Models.User;
 
 import java.util.Collections;
 import java.util.List;
@@ -107,7 +109,7 @@ public class ActualQuiz extends AppCompatActivity {
 
         entireQuestionList=dbHelper.getAllQuestions();
         questionList = Question.getQuestions(topic,entireQuestionList);
-                questionCountTotal = questionList.size();
+        questionCountTotal = questionList.size();
         //ensure question are in random order
         Collections.shuffle(questionList);
 
@@ -238,6 +240,7 @@ public class ActualQuiz extends AppCompatActivity {
                     user=new User(c.getInt(3), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15));
                 }
 
+                //if statements determines which quiz the user is  attempting it will then update the users score for the particular topic and then add score to the Users total score
                 if (topic.equals("Enlightenment")){
 
                         SQLiteDatabase db=myDB.getWritableDatabase();
@@ -338,3 +341,5 @@ public class ActualQuiz extends AppCompatActivity {
 
 
 }
+
+//Coding in Flow. 2018. Multiple Choice App With Sqlite Integration. [online] Available at: <https://codinginflow.com/tutorials/android/quiz-app-with-sqlite/part-7-countdown-timer> [Accessed 20 April 2020].

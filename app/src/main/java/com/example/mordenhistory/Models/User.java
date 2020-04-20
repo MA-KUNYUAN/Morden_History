@@ -1,4 +1,4 @@
-package com.example.mordenhistory;
+package com.example.mordenhistory.Models;
 
 //setting up current user class which represents the user currently in the system
 public class User {

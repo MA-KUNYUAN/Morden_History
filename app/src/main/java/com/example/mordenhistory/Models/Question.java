@@ -1,10 +1,12 @@
-package com.example.mordenhistory;
-
-import com.example.mordenhistory.Database.DatabaseHelp;
+package com.example.mordenhistory.Models;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//Questions class which contains the each questions relevant atributes
+//Each question will have a question a topic that is associated with that question
+//Then 3 possible options the user can choose
+//The right question is represented by the answer number
 public class Question {
     private String question;
     private String topic;
@@ -74,6 +76,7 @@ public class Question {
         this.answerNr = answerNr;
     }
 
+    //mehtod which will return only the relevant questions associated with the topic name
     public static ArrayList<Question> getQuestions(String title, List<Question> array){
 
 
@@ -89,4 +92,6 @@ public class Question {
 
 
     }
+
+
 }
