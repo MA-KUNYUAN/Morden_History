@@ -4,4 +4,5 @@
     <string name="user_name">User Name</string>
     <string name="user_score">xxx points</string>
     <string name="topics">Topics</string>
+    <string name="notebook_hint">My Notebook</string>
 </resources>
