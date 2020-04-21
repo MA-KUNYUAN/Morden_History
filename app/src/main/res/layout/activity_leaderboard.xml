@@ -8,9 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/LeaderView"
-        android:layout_width="407dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="382dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,12 +18,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
+        android:layout_height="50dp"
         android:background="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LeaderView"
         app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
