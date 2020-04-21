@@ -1,80 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="407dp"
-        android:layout_height="304dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="261dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@mipmap/ic_launcher_foreground" />
-    </FrameLayout>
+        <Button
+            android:id="@+id/readings"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/circle_button"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="PdfView"
+            android:text="readings"
+            android:layout_marginBottom="20dp"/>
 
-    <TextView
-        android:id="@+id/title1"
-        android:layout_width="342dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="53dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/youtube"
+            android:layout_width="90dp"
+            android:layout_height="93dp"
+            android:background="@drawable/circle_button"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="YouTubeVideo"
+            android:text="You Tube Videos"
+            android:layout_marginBottom="20dp"/>
 
-    <Button
-        android:id="@+id/readings"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/circle_button"
-        android:gravity="center_vertical|center_horizontal"
-        android:onClick="PdfView"
-        android:text="readings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube" />
+        <Button
+            android:id="@+id/quiz"
+            android:layout_width="90dp"
+            android:layout_height="93dp"
+            android:background="@drawable/circle_button"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="takeQuiz"
+            android:text="Quiz" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/youtube"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/circle_button"
-        android:gravity="center_vertical|center_horizontal"
-        android:onClick="YouTubeVideo"
-        android:text="You Tube Videos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title1" />
-
-    <Button
-        android:id="@+id/quiz"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="34dp"
-        android:background="@drawable/circle_button"
-        android:gravity="center_vertical|center_horizontal"
-        android:onClick="takeQuiz"
-        android:text="Quiz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/readings" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

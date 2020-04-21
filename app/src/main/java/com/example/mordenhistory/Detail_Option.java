@@ -22,8 +22,8 @@ public class Detail_Option extends AppCompatActivity {
             Topics topic = getIntent().getParcelableExtra("selected_note");
 
             //set the TextView to the name of the object
-            TextView title=(TextView)findViewById(R.id.title1);
-            title.setText(topic.getName());
+            //TextView title=(TextView)findViewById(R.id.title1);
+            //title.setText(topic.getName());
             setTitle(topic.getName());
 
 

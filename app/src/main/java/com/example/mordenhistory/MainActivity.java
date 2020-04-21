@@ -43,12 +43,6 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
 
             getParent().getParent().setTitle("Modern History");
 
-            //setTitle("My new title");
-
-
-
-
-
         }
         //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         //connecting bottom navigation view with menu
@@ -56,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
-
 
         //recycler view method is called
 
@@ -132,4 +125,11 @@ public class MainActivity extends AppCompatActivity implements TopicAdapter.OnCl
         startActivity(intent);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
+    }
+
 }

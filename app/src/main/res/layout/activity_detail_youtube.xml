@@ -4,46 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
     tools:context=".DetailYoutube">
+
 
     <TextView
         android:id="@+id/youTubeTitle"
-        android:layout_width="357dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginLeft="27dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="268dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
         android:text="TextView"
         android:textColor="#151515"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/youtube_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <view
+        android:id="@+id/youtube_view"
+        class="com.google.android.youtube.player.YouTubePlayerView"
+        android:layout_width="320dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/youTubeTitle" />
 
     <Button
         android:id="@+id/playVid"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="38dp"
+        android:layout_width="85dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="119dp"
         android:alpha="0.80"
         android:background="@drawable/circle_button"
         android:gravity="center_vertical|center_horizontal"
         android:text="Play Video"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/youtube_view" />
-
-    <view
-        android:id="@+id/youtube_view"
-        class="com.google.android.youtube.player.YouTubePlayerView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="31dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youTubeTitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

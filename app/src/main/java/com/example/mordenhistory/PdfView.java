@@ -25,6 +25,7 @@ public class PdfView extends AppCompatActivity {
         Pdf pdf = getIntent().getParcelableExtra("selected_note2");
         String actualBook=pdf.getNamePDF();
 
+        setTitle("PDF");
         book.fromAsset(actualBook).load();
     }
 

@@ -35,6 +35,8 @@ public class StartQuiz extends AppCompatActivity {
                 startQuiz();
             }
         });
+
+        setTitle("Quiz");
     }
 
 

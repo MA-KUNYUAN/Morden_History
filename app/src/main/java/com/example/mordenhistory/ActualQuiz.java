@@ -82,6 +82,7 @@ public class ActualQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actual_quiz);
 
+        setTitle("Quiz");
 
         textViewQuestion = findViewById(R.id.question);
         textViewScore = findViewById(R.id.text_view_score);
