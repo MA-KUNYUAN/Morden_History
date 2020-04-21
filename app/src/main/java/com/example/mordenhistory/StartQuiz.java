@@ -98,7 +98,7 @@ public class StartQuiz extends AppCompatActivity {
                 }else{
                     Toast.makeText(this, "You have already attempted the quiz", Toast.LENGTH_SHORT).show();
                 }
-            }else if(topic.equals("Imperialism")){
+            }else if(topic.equals("The age of Imperialism")){
                 int attempt=user.getImperialismAttempt();
                 if(attempt==0){
                     startActivity(intent1);

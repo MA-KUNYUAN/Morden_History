@@ -264,7 +264,7 @@ public class ActualQuiz extends AppCompatActivity {
                     db.execSQL("UPDATE user_table SET industrialRevolutionScore="+score+" WHERE UserName='Peter'");
                     db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
 
-                }else if(topic.equals("Imperialism")){
+                }else if(topic.equals("The age of Imperialism")){
 
                     SQLiteDatabase db=myDB.getWritableDatabase();
                     db.execSQL("UPDATE user_table SET imperialismScore="+score+" WHERE UserName='Peter'");
