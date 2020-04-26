@@ -45,10 +45,10 @@
 
     <RadioGroup
         android:id="@+id/radio_group"
-        android:layout_width="328dp"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="121dp"
         android:layout_marginBottom="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -101,6 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_marginBottom="16dp"
+        android:background="#80FDBF03"
         android:text="submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
