@@ -20,34 +20,36 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
     private final OnClickListener onCklickListner;
 
 
-
-    //setting up the OnClickListener Interface that will be implemented by the main activity as wel as the recyclerView
+    //setting up the OnClickListener Interface that will be implemented by the main activity as well as the ViewHolder class
+    //the interface will be used to detect the click
     public interface OnClickListener {
+        //the method will be used in the activity to send the position of the onClicked item
         void OnClick(int position);
     }
 
 
-
     //implements viewholder class
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    //The ViewHolder class will implement the OnClickListener so that the app will be able to detect the click
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView topicName;
         public TextView peroid;
         OnClickListener onClickListener;
 
-        public ViewHolder(View itemView, OnClickListener onClickListener){
+        public ViewHolder(View itemView, OnClickListener onClickListener) {
 
             super(itemView);
 
-            topicName=(TextView) itemView.findViewById(R.id.topicName);
-            peroid=(TextView) itemView.findViewById(R.id.peroid);
-            this.onClickListener=onClickListener;
+            topicName = itemView.findViewById(R.id.topicName);
+            peroid = itemView.findViewById(R.id.peroid);
+            this.onClickListener = onClickListener;
+            //attach OnClickListener to the entire ViewHolder
             itemView.setOnClickListener(this);
 
         }
 
 
-// OnClick method which will help determine which item was selected by the user
+        // OnClick method which will help determine which item was selected by the user
         @Override
         public void onClick(View v) {
             onClickListener.OnClick(getAdapterPosition());
@@ -57,9 +59,9 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
     private List<Topics> mTopic;
 
     //adapter constructor has been created
-    public  TopicAdapter(List<Topics> coins, OnClickListener mOnClickListner){
-        mTopic=coins;
-        this.onCklickListner=mOnClickListner;
+    public TopicAdapter(List<Topics> coins, OnClickListener mOnClickListner) {
+        mTopic = coins;
+        this.onCklickListner = mOnClickListner;
 
     }
 

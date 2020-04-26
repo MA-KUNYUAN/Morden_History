@@ -8,7 +8,7 @@
     android:layout_centerVertical="true"
     android:orientation="vertical"
     android:paddingTop="16dp"
-    tools:context=".DetailYoutube">
+    tools:context=".DetailYouTube">
 
 
     <TextView

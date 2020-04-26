@@ -9,7 +9,7 @@ public final class QuizContract {
     }
 
     //constants for database table
-    //implementing the base_collum will snure the table will have id's
+    //implementing the base_collum will ensure the table will have id's
     public static class QuestionsTable implements BaseColumns {
         public static final String TABLE_NAME="quiz_questions";
         public static final String COLUMN_QUESTION="question";

@@ -17,11 +17,11 @@
         <activity android:name=".StartQuiz" />
         <activity android:name=".PdfView" />
         <activity android:name=".PdfList" />
-        <activity android:name=".DetailYoutube" />
+        <activity android:name=".DetailYouTube" />
         <activity android:name=".YouTubeList" />
         <activity android:name=".Leaderboard" />
         <activity android:name=".Settings" />
-        <activity android:name=".Detail_Option" />
+        <activity android:name=".DetailOption" />
         <activity
             android:name=".MainActivity"
             android:label="Topics">

@@ -12,7 +12,7 @@ import com.example.mordenhistory.Models.YouTubeVideo;
 
 import java.util.ArrayList;
 
-public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnClickListener{
+public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnClickListener {
 
 
     ArrayList<YouTubeVideo> videos;
@@ -22,8 +22,7 @@ public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube_list);
         //launching recyclerview
-      launchApp();
-
+        launchApp();
 
     }
 
@@ -31,17 +30,17 @@ public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnC
     //setting up recyclerview
     private void launchApp() {
 
-        RecyclerView rvTopic = (RecyclerView) findViewById(R.id.youTube_rv);
+        RecyclerView rvTopic = findViewById(R.id.youTube_rv);
 
-        Intent intent=getIntent();
-        Bundle extras=intent.getExtras();
-        String topic= (String) extras.get("topic_title");
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String topic = (String) extras.get("topic_title");
         setTitle(topic);
 
         //will return only the videos associated to the topic
         videos = YouTubeVideo.getVideo(topic);
 
-      YouTubeAdapter adapter=new YouTubeAdapter(videos, (YouTubeAdapter.OnClickListener)this);
+        YouTubeAdapter adapter = new YouTubeAdapter(videos, this);
 
         rvTopic.setAdapter(adapter);
         rvTopic.setLayoutManager(new LinearLayoutManager(this));
@@ -53,9 +52,9 @@ public class YouTubeList extends AppCompatActivity implements YouTubeAdapter.OnC
     //the method will determine what will occur a item in the recyclerview is presssed
     //Will navigate to DetailYouTube activity
     public void OnClick(int position) {
-        Intent intent =new Intent (this, DetailYoutube.class);
+        Intent intent = new Intent(this, DetailYouTube.class);
         //data of selected item is passed
-        intent.putExtra("selected_note1",  videos.get(position));
+        intent.putExtra("selected_note1", videos.get(position));
         startActivity(intent);
 
     }

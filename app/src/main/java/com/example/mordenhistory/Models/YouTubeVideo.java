@@ -8,20 +8,20 @@ import java.util.ArrayList;
 //class for the YouTube videos
 //the class contains the videos name as well as the video's URL
 public class YouTubeVideo implements Parcelable {
-    public String URL;
+    public String id;
     public String name;
 
-    public YouTubeVideo(){
+    public YouTubeVideo() {
 
     }
 
-    public YouTubeVideo(String URL, String name) {
-        this.URL = URL;
+    public YouTubeVideo(String id, String name) {
+        this.id = id;
         this.name = name;
     }
 
     protected YouTubeVideo(Parcel in) {
-        URL = in.readString();
+        id = in.readString();
         name = in.readString();
     }
 
@@ -37,12 +37,12 @@ public class YouTubeVideo implements Parcelable {
         }
     };
 
-    public String getURL() {
-        return URL;
+    public String getId() {
+        return id;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setId(String URL) {
+        this.id = URL;
     }
 
     public String getName() {
@@ -56,23 +56,23 @@ public class YouTubeVideo implements Parcelable {
 
     //The method will only get the YouTube Video's associated to the specific title
 
-    public static ArrayList<YouTubeVideo> getVideo(String title){
-        ArrayList<Topics> topic=Topics.getTopics();
-        ArrayList<Topics> topic2=new ArrayList<>();
-        ArrayList<YouTubeVideo> vid3=new ArrayList<>();
-        for(int i=0; i<topic.size(); i++){
-            if((topic.get(i).getName()).equals(title)) {
+    public static ArrayList<YouTubeVideo> getVideo(String title) {
+        ArrayList<Topics> topic = Topics.getTopics();
+        ArrayList<Topics> topic2 = new ArrayList<>();
+        ArrayList<YouTubeVideo> vid3 = new ArrayList<>();
+        for (int i = 0; i < topic.size(); i++) {
+            if ((topic.get(i).getName()).equals(title)) {
                 topic2.add(topic.get(i));
             }
         }
 
-        for(int i=0; i<topic2.size() ; i++){
+        for (int i = 0; i < topic2.size(); i++) {
 
-            Topics topic3=topic2.get(i);
+            Topics topic3 = topic2.get(i);
 
-            ArrayList<YouTubeVideo> vid1=topic3.getYoutube();
+            ArrayList<YouTubeVideo> vid1 = topic3.getYoutube();
 
-            for(int k = 0; k<vid1.size(); k++){
+            for (int k = 0; k < vid1.size(); k++) {
 
                 vid3.add(vid1.get(k));
             }
@@ -86,15 +86,15 @@ public class YouTubeVideo implements Parcelable {
     }
 
     //this method will return only the Videos associated the a particular topic name
-    public static YouTubeVideo pick(String nameR){
-        ArrayList<Topics> topic=Topics.getTopics();
-       ArrayList<YouTubeVideo> vid=new ArrayList<>();
-        for(int i=0; i< topic.size();i++ ){
-            Topics topic1=topic.get(i);
+    public static YouTubeVideo pick(String nameR) {
+        ArrayList<Topics> topic = Topics.getTopics();
+        ArrayList<YouTubeVideo> vid = new ArrayList<>();
+        for (int i = 0; i < topic.size(); i++) {
+            Topics topic1 = topic.get(i);
 
-            ArrayList<YouTubeVideo> vid1=topic1.getYoutube();
+            ArrayList<YouTubeVideo> vid1 = topic1.getYoutube();
 
-            for(int k = 0; k<vid1.size(); k++){
+            for (int k = 0; k < vid1.size(); k++) {
 
                 vid.add(vid1.get(k));
             }
@@ -102,9 +102,9 @@ public class YouTubeVideo implements Parcelable {
 
         }
 
-        for(YouTubeVideo l: vid){
+        for (YouTubeVideo l : vid) {
 
-            if (nameR.equals(l.getName())){
+            if (nameR.equals(l.getName())) {
                 return l;
             }
         }
@@ -118,7 +118,7 @@ public class YouTubeVideo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(URL);
+        dest.writeString(id);
         dest.writeString(name);
     }
 }

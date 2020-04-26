@@ -28,7 +28,6 @@ import java.util.Locale;
 public class ActualQuiz extends AppCompatActivity {
 
 
-
     private TextView textViewQuestion;
     private TextView textViewScore;
     private TextView textViewQuestionCount;
@@ -71,10 +70,9 @@ public class ActualQuiz extends AppCompatActivity {
 
     private long backPressedTime;
 
-    DatabaseHelp2 myDB=new DatabaseHelp2(this);
+    DatabaseHelp2 myDB = new DatabaseHelp2(this);
 
     User user;
-
 
 
     @Override
@@ -96,20 +94,20 @@ public class ActualQuiz extends AppCompatActivity {
 
         //will save the default colour of the text
         textColorDefaultRb = rb1.getTextColors();
-        textColorDefaultCd=textViewCountDown.getTextColors();
+        textColorDefaultCd = textViewCountDown.getTextColors();
 
 
         //initialising helper class
         //and getting the questions
 
-        Intent intent=getIntent();
-        Bundle extras=intent.getExtras();
-        String topic= (String) extras.get("topic_title");
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        String topic = (String) extras.get("topic_title");
 
         DatabaseHelp dbHelper = new DatabaseHelp(this);
 
-        entireQuestionList=dbHelper.getAllQuestions();
-        questionList = Question.getQuestions(topic,entireQuestionList);
+        entireQuestionList = dbHelper.getAllQuestions();
+        questionList = Question.getQuestions(topic, entireQuestionList);
         questionCountTotal = questionList.size();
         //ensure question are in random order
         Collections.shuffle(questionList);
@@ -139,7 +137,7 @@ public class ActualQuiz extends AppCompatActivity {
     //method for next question
     private void showNextQuestion() {
 
-      //setting default text colour for radio buttons
+        //setting default text colour for radio buttons
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
         rb3.setTextColor(textColorDefaultRb);
@@ -229,46 +227,46 @@ public class ActualQuiz extends AppCompatActivity {
         //determines whether the answer number of the selected is correct for the current question
 
         if (answerNr == currentQuestion.getAnswerNr()) {
-            Intent intent=getIntent();
-            Bundle extras=intent.getExtras();
-            String topic= (String) extras.get("topic_title");
+            Intent intent = getIntent();
+            Bundle extras = intent.getExtras();
+            String topic = (String) extras.get("topic_title");
             score++;
             textViewScore.setText("Score: " + score);
             Cursor c = myDB.getCurrentUserInfor();
-            if(c != null){
+            if (c != null) {
                 //myArray = new ArrayList<User>();
-                while(c.moveToNext()){
-                    user=new User(c.getInt(3), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15));
+                while (c.moveToNext()) {
+                    user = new User(c.getInt(3), c.getInt(6), c.getInt(7), c.getInt(8), c.getInt(9), c.getInt(10), c.getInt(11), c.getInt(12), c.getInt(13), c.getInt(14), c.getInt(15));
                 }
 
                 //if statements determines which quiz the user is  attempting it will then update the users score for the particular topic and then add score to the Users total score
-                if (topic.equals("Enlightenment")){
+                if (topic.equals("Enlightenment")) {
 
-                        SQLiteDatabase db=myDB.getWritableDatabase();
-                        db.execSQL("UPDATE user_table SET enlightenmentScore="+score+" WHERE UserName='Peter'");
-                        db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
-
-                }else if(topic.equals("American Revolution")){
-                    SQLiteDatabase db=myDB.getWritableDatabase();
-                    db.execSQL("UPDATE user_table SET americanRevolutionScore="+score+" WHERE UserName='Peter'");
+                    SQLiteDatabase db = myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET enlightenmentScore=" + score + " WHERE UserName='Peter'");
                     db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
 
-                }else if(topic.equals("French Revolution")){
-                    SQLiteDatabase db=myDB.getWritableDatabase();
-                    db.execSQL("UPDATE user_table SET frenchRevolutionScore="+score+" WHERE UserName='Peter'");
+                } else if (topic.equals("American Revolution")) {
+                    SQLiteDatabase db = myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET americanRevolutionScore=" + score + " WHERE UserName='Peter'");
+                    db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
+
+                } else if (topic.equals("French Revolution")) {
+                    SQLiteDatabase db = myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET frenchRevolutionScore=" + score + " WHERE UserName='Peter'");
                     db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
 
 
-                }else if(topic.equals("Industrial Revolution")){
+                } else if (topic.equals("Industrial Revolution")) {
 
-                    SQLiteDatabase db=myDB.getWritableDatabase();
-                    db.execSQL("UPDATE user_table SET industrialRevolutionScore="+score+" WHERE UserName='Peter'");
+                    SQLiteDatabase db = myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET industrialRevolutionScore=" + score + " WHERE UserName='Peter'");
                     db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
 
-                }else if(topic.equals("The age of Imperialism")){
+                } else if (topic.equals("The age of Imperialism")) {
 
-                    SQLiteDatabase db=myDB.getWritableDatabase();
-                    db.execSQL("UPDATE user_table SET imperialismScore="+score+" WHERE UserName='Peter'");
+                    SQLiteDatabase db = myDB.getWritableDatabase();
+                    db.execSQL("UPDATE user_table SET imperialismScore=" + score + " WHERE UserName='Peter'");
                     db.execSQL("UPDATE user_table SET TotalScore=(SELECT (enlightenmentScore+americanRevolutionScore+frenchRevolutionScore+industrialRevolutionScore+imperialismScore) as 'Total' FROM user_table WHERE UserName='Peter') WHERE USERNAME='Peter'");
 
                 }
