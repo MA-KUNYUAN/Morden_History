@@ -1,4 +1,4 @@
-# Modern History
+# Modern History Application
 
 Android application that help users learn more about Modern History. Learn about topics such as the French revolution, the age of imperialism and more ...
 
